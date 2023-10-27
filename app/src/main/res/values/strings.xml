@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">TrabajoGrupo</string>
+    <string name="app_name_juanjo">Calculadora</string>
+    <string name="_dani">Calculadora</string>
+    <string name="app_name_Elian">Calculadora</string>
+
+    <!--String de juanjo -->
+    <string name="_ce">CE</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_9">9</string>
+    <string name="_mas">+</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_menos">-</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_multiplicarJuanJo">*</string>
+    <string name="_punto">.</string>
+    <string name="_0">0</string>
+    <string name="_igual">=</string>
+    <string name="_dividir">/</string>
+    <string name="_pantallaMostrar">0</string>
+    <string name="_borrarUno"><![CDATA[<-]]></string>
+
+    <!--String de Elian -->
+    <string name="botCE">C</string>
+    <string name="botMas">+</string>
+    <string name="botMenos">-</string>
+    <string name="botProd">*</string>
+    <string name="botDiv">/</string>
+    <string name="botEq">=</string>
+    <string name="bot0">0</string>
+    <string name="bot1">1</string>
+    <string name="bot2">2</string>
+    <string name="bot3">3</string>
+    <string name="bot4">4</string>
+    <string name="bot5">5</string>
+    <string name="bot6">6</string>
+    <string name="bot7">7</string>
+    <string name="bot8">8</string>
+    <string name="bot9">9</string>
+    <string name="botDecim">.</string>
+    <string name="botCE1">></string>
+    <string name="textPant">""</string>
+    <string name="txt_borrar"><![CDATA[<]]></string>
+    <string name="_multiplicar">X</string>
+    <string name="txtDaniPrueba">""</string>
+
+    <!--String de menu -->
+    <string name="calculadora_juanjo">Calculadora Juanjo</string>
+    <string name="calculadora_dani">calculadora Dani</string>
+    <string name="calculadora_elian">calculadora Elian</string>
+    <string name="calculadora_imc">Calculadora IMC</string>
+    <string name="salir_del_programa">Salir del programa</string>
+    <string name="btn_volver">Volver</string>
+
+    <!--String de IMC -->
+    <string name="_hombre">HOMBRE</string>
+    <string name="_mujer">MUJER</string>
+    <string name="_altura">ALTURA</string>
+    <string name="_rangoTextoEditable">120CM</string>
+    <string name="_peso">PESO</string>
+    <string name="_edad">EDAD</string>
+    <string name="pesoenkilos">60</string>
+    <string name="edadEnNumero">30</string>
+    <string name="_calcular">CALCULAR</string>
+    <string name="ApellidosNombre">Juan Jose Galvin Reyes\nDaniel Gutierrez Bueno\nElian Deniz Saiz</string>
+    <string name="aumentar_edad">aumentar edad</string>
+    <string name="disminuir_edad">disminuir edad</string>
+    <string name="aumentar_peso">aumentar peso</string>
+    <string name="disminuir_peso">disminuir peso</string>
+    <string name="rango_de_altura">Rango de altura</string>
+</resources>
