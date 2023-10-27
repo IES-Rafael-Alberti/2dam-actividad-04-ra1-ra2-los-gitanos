@@ -126,6 +126,7 @@ class IMCActivity : AppCompatActivity() {
         //Pulsación en el botón regresar para volver al menu principal.
         btnRegresar.setOnClickListener{
                 val intent = Intent(this, MainActivity::class.java)
+                intent.putExtra(IMCActivity.IMC_export, IMC_export)
                 startActivity(intent)
         }
     }
