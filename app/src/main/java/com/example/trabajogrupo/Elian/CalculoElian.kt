@@ -1,5 +1,9 @@
 package com.example.trabajogrupo.Elian
 
+import android.widget.Button
+import android.widget.TextView
+import org.w3c.dom.Text
+
 class CalculoElian {
     private var resultado = 0.0F
     private var valores = ""
@@ -66,6 +70,19 @@ class CalculoElian {
     fun doOperation(valores: String, tipoOp: String): Float {
         val op = valores.split("+", "-", "x", "/", "=")
         return Operation(op[0].toFloat(), tipoOp, op[1].toFloat())
+    }
+
+    /**
+     * Bucle en donde vamos iterando en una lista en donde contenemos
+     * los botones, e iniciamos sus Listeners
+     */
+    fun bucleBots(listaBot: List<Button>, texto: TextView){
+        for (i in listaBot.indices) {
+            listaBot[i].setOnClickListener {
+                val resultado = BotonClick(i, listaBot[i].text.toString())
+                texto.text = resultado
+            }
+        }
     }
 
     fun BotonClick(indBot: Int, cifraBot: String): String {

@@ -12,12 +12,29 @@ import com.example.trabajogrupo.R
 class MainActivityElian : AppCompatActivity() {
     //texto donde van apareciendo nuestros parametros
     private lateinit var texto: TextView
+    private lateinit var botones: List<Button>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_elian)
 
+        inicBots()
+        val calc = CalculoElian()
+        /*for (i in botones.indices) {
+            botones[i].setOnClickListener {
+                val resultado = calc.BotonClick(i, botones[i].text.toString())
+                if (resultado == "") {
+                    mensError("Error de cifras")
+                }
+                texto.text = resultado
+            }
+        }*/
+        calc.bucleBots(botones, texto)
+        btnRegresarMenu()
+    }
+
+    private fun inicBots() {
         //lista de botones
-        val botones = listOf<Button>(
+        botones = listOf(
             findViewById(R.id.boton0),
             findViewById(R.id.boton1),
             findViewById(R.id.boton2),
@@ -38,33 +55,19 @@ class MainActivityElian : AppCompatActivity() {
             findViewById(R.id.botonPunto)
         )
 
-        fun mensError(msj: String){
-            Toast.makeText(this, msj, Toast.LENGTH_LONG).show()
-        }
-
         texto = findViewById(R.id.texto)
-        val calc = CalculoElian()
-
-        /**
-         * Bucle en donde vamos iterando en una lista en donde contenemos
-         * los botones, e iniciamos sus Listeners
-         */
-        for (i in botones.indices) {
-            botones[i].setOnClickListener {
-                val resultado = calc.BotonClick(i, botones[i].text.toString())
-                if (resultado == ""){
-                    mensError("Error de cifras")
-                }
-                texto.hint = resultado
-            }
-        }
-        btnRegresarMenu()
     }
-    private fun btnRegresarMenu(){
+
+    private fun mensError(msj: String) {
+        Toast.makeText(this, msj, Toast.LENGTH_LONG).show()
+    }
+
+    private fun btnRegresarMenu() {
         val btnRegresar = findViewById<Button>(R.id.botonVolver)
-        btnRegresar.setOnClickListener{
+        btnRegresar.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent) }
+            startActivity(intent)
+        }
     }
 }
 
