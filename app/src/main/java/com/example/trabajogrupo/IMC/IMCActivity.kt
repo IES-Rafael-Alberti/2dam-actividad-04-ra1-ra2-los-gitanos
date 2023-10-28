@@ -167,26 +167,27 @@ class IMCActivity : AppCompatActivity() {
     * de Toast.
     */
     private fun calculoIMC() {
-        // Obtén la cadena de altura
+        // Obtén la cadena de altura.
         val alturaStr = alturaCM.text.toString()
 
-        // Elimina cualquier carácter no numérico (como "CM")
+        // Elimina cualquier carácter no numérico (como "CM").
         val alturaLimpia = alturaStr.replace(Regex("[^0-9.]"), "")
 
         try {
-            // Intenta convertir la cadena limpia a un valor numérico
+            // Intenta convertir la cadena limpia a un valor numérico.
             val altura = alturaLimpia.toDouble()
 
             // Calcula el IMC
             val IMC = mostrarPeso.text.toString().toInt() / ((altura / 100.0) * (altura / 100.0))
 
-            // Redondea el IMC a dos decimales
+            // Redondea el IMC a un decimal.
             val redondeo = DecimalFormat("#.#")
 
+            // Le damos valor a la variable que manda el resultado a otra pantalla.
             IMC_export = redondeo.format(IMC).toDouble()
 
         } catch (e: NumberFormatException) {
-            // Manejo de error: La cadena no se pudo convertir a un valor numérico
+            // Manejo de error: La cadena no se pudo convertir a un valor numérico.
             Toast.makeText(this, "La altura no es un número válido", Toast.LENGTH_LONG).show()
         }
     }
