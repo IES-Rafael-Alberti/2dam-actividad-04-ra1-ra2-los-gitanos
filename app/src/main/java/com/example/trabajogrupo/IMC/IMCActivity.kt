@@ -85,7 +85,7 @@ class IMCActivity : AppCompatActivity() {
 
         // Cambio en la barra de medida de altura
         barraMedida.addOnChangeListener { _, value, _ ->
-            alturaCM.text = value.toInt().toString()
+            alturaCM.text = value.toInt().toString() + "CM"
         }
 
         // Pulsación en el botón de aumentar peso
@@ -120,13 +120,13 @@ class IMCActivity : AppCompatActivity() {
         btnCalculo.setOnClickListener {
             calculoIMC()
             val intent = Intent(this, activity_imc_resultado::class.java)
+            intent.putExtra(IMCActivity.IMC_export, IMC_export)
             startActivity(intent)
         }
 
         //Pulsación en el botón regresar para volver al menu principal.
         btnRegresar.setOnClickListener{
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra(IMCActivity.IMC_export, IMC_export)
                 startActivity(intent)
         }
     }
@@ -182,13 +182,8 @@ class IMCActivity : AppCompatActivity() {
 
             // Redondea el IMC a dos decimales
             val redondeo = DecimalFormat("#.#")
-            val resultado = redondeo.format(IMC)
 
             IMC_export = redondeo.format(IMC)
-
-            // Muestra el resultado del IMC en un mensaje de tostada
-            //Toast.makeText(this, "Su IMC es -> $resultado", Toast.LENGTH_LONG).show()
-
 
         } catch (e: NumberFormatException) {
             // Manejo de error: La cadena no se pudo convertir a un valor numérico

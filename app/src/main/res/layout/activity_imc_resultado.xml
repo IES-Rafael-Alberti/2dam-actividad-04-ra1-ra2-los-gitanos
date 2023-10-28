@@ -6,18 +6,40 @@
     android:layout_height="match_parent"
     >
 
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/eddie" />
+    <TextView
+        android:id="@+id/pantalla2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textAlignment="center"
+        android:textSize="17dp"
+        android:textColor="@color/black"
+        app:layout_constraintVertical_bias="0.01"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Button
+        android:id="@+id/vueltaReseultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_vuelta"
+        android:layout_marginTop="125dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/VerdeClaro"
+        android:textColor="@color/gOscuro"
+        />
 
 
-<Button
-    android:id="@+id/pruebaDelImc"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:text="IMC"
-    >
 
-</Button>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,6 +56,7 @@
     <string name="calculadora_imc">Calculadora IMC</string>
     <string name="salir_del_programa">Salir del programa</string>
     <string name="btn_volver">Volver</string>
+    <string name="btn_vuelta">Volver</string>
 
     <!--String de IMC -->
     <string name="_hombre">HOMBRE</string>
