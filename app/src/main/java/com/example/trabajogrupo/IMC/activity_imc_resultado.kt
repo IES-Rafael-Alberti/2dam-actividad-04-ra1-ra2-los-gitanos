@@ -14,17 +14,29 @@ class activity_imc_resultado : AppCompatActivity() {
 
     private lateinit var pantalla2: TextView
     private lateinit var vuelta: Button
+    private lateinit var backgroundImageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imc_resultado)
 
 
-        val backgroundImageView = findViewById<ImageView>(R.id.backgroundImageView)
+        LlamadaComponente()
+
+        Resultado()
+
+        BotonVuelta()
+    }
 
 
+    fun LlamadaComponente(){
         pantalla2 = findViewById<TextView>(R.id.pantalla2)
         vuelta = findViewById(R.id.vueltaReseultado)
+
+        backgroundImageView = findViewById<ImageView>(R.id.backgroundImageView)
+    }
+
+    fun Resultado(){
         val resultado = intent.getDoubleExtra("IMC_export", IMCActivity.IMC_export)
 
         if(resultado < 18.5){
@@ -43,12 +55,12 @@ class activity_imc_resultado : AppCompatActivity() {
             pantalla2.text = "Tu resultado es: " + resultado.toString() + "\nCuidadin, estás obeso"
             backgroundImageView.setImageResource(R.drawable.obelix)
         }
-
-        vuelta.setOnClickListener{
-            val intent = Intent(this, IMCActivity::class.java)
-            startActivity(intent) }
-
     }
 
 
+    fun BotonVuelta(){
+        vuelta.setOnClickListener{
+            val intent = Intent(this, IMCActivity::class.java)
+            startActivity(intent) }
+    }
 }
