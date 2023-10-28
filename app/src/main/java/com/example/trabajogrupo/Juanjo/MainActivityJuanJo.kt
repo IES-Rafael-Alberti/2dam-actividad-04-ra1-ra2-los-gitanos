@@ -29,8 +29,8 @@ class MainActivityJuanJo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_juanjo)
-        pantallaMostrarResultado = findViewById(R.id.pantallaMostrarResultado)
-        pantallaRegistro = findViewById(R.id.pantallaRegistro)
+
+        inicializacionComponentes()
 
         // Inicializar las listas de botones.
         funListaDeNumeros()
@@ -61,6 +61,11 @@ class MainActivityJuanJo : AppCompatActivity() {
         listaDeNumeros.add(findViewById(R.id.btn_Punto))
     }
 
+    private fun inicializacionComponentes(){
+        pantallaMostrarResultado = findViewById(R.id.pantallaMostrarResultado)
+        pantallaRegistro = findViewById(R.id.pantallaRegistro)
+    }
+
     /**
      * Configura la lista de botones para operaciones.
      */
@@ -85,7 +90,6 @@ class MainActivityJuanJo : AppCompatActivity() {
     private fun funListaDeNumeros(){
         listaDeNumeros = mutableListOf()
         listaNumeros()
-        pantallaMostrarResultado = findViewById<TextView>(R.id.pantallaMostrarResultado)
 
         for (numero in listaDeNumeros){
             numero.setOnClickListener(View.OnClickListener {
@@ -121,7 +125,6 @@ class MainActivityJuanJo : AppCompatActivity() {
     private fun funListaDeOperaciones(){
         listaDeOperaciones = mutableListOf()
         listaOperaciones()
-        pantallaMostrarResultado = findViewById<TextView>(R.id.pantallaMostrarResultado)
 
         // Configuración de la acción cuando se presionan botones de operaciones.
         for (operacion in listaDeOperaciones){
