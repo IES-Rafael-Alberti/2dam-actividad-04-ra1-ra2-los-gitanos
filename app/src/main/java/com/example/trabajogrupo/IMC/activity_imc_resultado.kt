@@ -25,8 +25,8 @@ class activity_imc_resultado : AppCompatActivity() {
 
         pantalla2 = findViewById<TextView>(R.id.pantalla2)
         vuelta = findViewById(R.id.vueltaReseultado)
-        val resultado = intent.getStringExtra(IMCActivity.IMC_export)?.toDouble()
-        if (resultado != null) {
+        val resultado = intent.getDoubleExtra("IMC_export", IMCActivity.IMC_export)
+
             if(resultado < 18.5){
                 pantalla2.text = "Tu resultado es: " + resultado.toString() + "\nPeso inferior al normal"
                 backgroundImageView.setImageResource(R.drawable.eddie)
@@ -43,9 +43,6 @@ class activity_imc_resultado : AppCompatActivity() {
                 pantalla2.text = "Tu resultado es: " + resultado.toString() + "\nCuidadin, estás obeso"
                 backgroundImageView.setImageResource(R.drawable.obelix)
             }
-
-        }
-
 
         vuelta.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)

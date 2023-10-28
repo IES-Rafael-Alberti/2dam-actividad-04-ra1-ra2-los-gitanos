@@ -85,7 +85,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tarjetaIzquierda"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/gOscuro"
         app:cardCornerRadius="16dp"
         >
@@ -131,7 +131,7 @@
         android:id="@+id/tarjetaPeso"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tarjetaCentral"
@@ -198,7 +198,7 @@
         android:id="@+id/tarjetaEdad"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tarjetaCentral"
         app:layout_constraintStart_toEndOf="@id/tarjetaPeso"
@@ -258,27 +258,30 @@
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btnCalcular"
-        android:layout_width="270dp"
-        android:layout_height="80dp"
-        android:text="@string/_calcular"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegresarIMC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="@color/rojo"
-        />
-
-    <Button
-        android:id="@id/btnRegresarIMC"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        app:layout_constraintStart_toEndOf="@id/btnCalcular"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="@string/btn_volver"
-        android:backgroundTint="@color/VerdeClaro"
-    />
+        app:layout_constraintTop_toBottomOf="@id/tarjetaPeso"
+        android:layout_marginTop="20dp">
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="@string/_calcular"
+            app:layout_constraintEnd_toStartOf="@+id/btnRegresarIMC"
+            android:backgroundTint="@color/rojo"
+            />
+
+        <Button
+            android:id="@id/btnRegresarIMC"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:text="@string/btn_volver"
+            android:layout_marginStart="10dp"
+            android:backgroundTint="@color/VerdeClaro"
+            />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

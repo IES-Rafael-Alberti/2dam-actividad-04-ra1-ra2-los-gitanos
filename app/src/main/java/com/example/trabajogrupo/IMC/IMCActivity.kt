@@ -32,7 +32,7 @@ class IMCActivity : AppCompatActivity() {
     private lateinit var btnRegresar: Button
 
     companion object{
-        var IMC_export: String = ""
+        var IMC_export: Double = 0.0
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,7 +85,7 @@ class IMCActivity : AppCompatActivity() {
 
         // Cambio en la barra de medida de altura
         barraMedida.addOnChangeListener { _, value, _ ->
-            alturaCM.text = value.toInt().toString() + "CM"
+            alturaCM.text = value.toString() + "CM"
         }
 
         // Pulsación en el botón de aumentar peso
@@ -120,7 +120,7 @@ class IMCActivity : AppCompatActivity() {
         btnCalculo.setOnClickListener {
             calculoIMC()
             val intent = Intent(this, activity_imc_resultado::class.java)
-            intent.putExtra(IMCActivity.IMC_export, IMC_export)
+            intent.putExtra("IMC_export", IMC_export)
             startActivity(intent)
         }
 
@@ -178,12 +178,12 @@ class IMCActivity : AppCompatActivity() {
             val altura = alturaLimpia.toDouble()
 
             // Calcula el IMC
-            val IMC = mostrarPeso.text.toString().toInt() / ((altura / 100) * (altura / 100))
+            val IMC = mostrarPeso.text.toString().toDouble() / ((altura / 100.0) * (altura / 100.0))
 
             // Redondea el IMC a dos decimales
             val redondeo = DecimalFormat("#.#")
 
-            IMC_export = redondeo.format(IMC)
+            IMC_export = redondeo.format(IMC).toDouble()
 
         } catch (e: NumberFormatException) {
             // Manejo de error: La cadena no se pudo convertir a un valor numérico
