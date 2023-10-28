@@ -85,7 +85,7 @@ class IMCActivity : AppCompatActivity() {
 
         // Cambio en la barra de medida de altura
         barraMedida.addOnChangeListener { _, value, _ ->
-            alturaCM.text = value.toString() + "CM"
+            alturaCM.text = value.toInt().toString() + "CM"
         }
 
         // Pulsación en el botón de aumentar peso
@@ -178,7 +178,7 @@ class IMCActivity : AppCompatActivity() {
             val altura = alturaLimpia.toDouble()
 
             // Calcula el IMC
-            val IMC = mostrarPeso.text.toString().toDouble() / ((altura / 100.0) * (altura / 100.0))
+            val IMC = mostrarPeso.text.toString().toInt() / ((altura / 100.0) * (altura / 100.0))
 
             // Redondea el IMC a dos decimales
             val redondeo = DecimalFormat("#.#")
