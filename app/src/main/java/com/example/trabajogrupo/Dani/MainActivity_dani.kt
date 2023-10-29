@@ -191,8 +191,10 @@ class MainActivity_dani : AppCompatActivity() {
 
     fun operacion(signo: String){
         if(calculo.num1 == ""){
+            calculo.operacion = ""
             Execpcion("debe introducir 2 números y una operación para mostrar un resultado")
-        }else{
+        }
+        else{
             if(bandera == false || calculo.num2 == ""){
                 pantalla.text = calculo.num1 + calculo.operacion
             }else{
