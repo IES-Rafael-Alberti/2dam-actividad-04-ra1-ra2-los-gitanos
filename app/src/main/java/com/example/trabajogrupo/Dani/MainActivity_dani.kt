@@ -193,6 +193,12 @@ class MainActivity_dani : AppCompatActivity() {
         if(calculo.num1 == ""){
             calculo.operacion = ""
             Execpcion("debe introducir 2 números y una operación para mostrar un resultado")
+        }else if(calculo.num1 == "0" && operacionAnterior == "/" && calculo.num2 != ""){
+            Reiniciar()
+        }
+        else if(calculo.num1 != "" && operacionAnterior == "/" && calculo.num2 == "0"){
+            Reiniciar()
+            Execpcion("No se puede dividir entre 0")
         }
         else{
             if(bandera == false || calculo.num2 == ""){
@@ -204,6 +210,7 @@ class MainActivity_dani : AppCompatActivity() {
                 calculo.num2 = ""
             }
         }
+
     }
 
     /**
@@ -211,6 +218,11 @@ class MainActivity_dani : AppCompatActivity() {
      */
 
     fun Igual(){
+        if(calculo.operacion == "/" && calculo.num2 == "0"){
+            calculo.resultado = "0"
+            Reiniciar()
+            Execpcion("No se puede dividir entre 0")
+        }
         // Si cualquiera de los atributos están vacios lanza una exepción.
         if(calculo.num1 == "" || calculo.num2  == ""|| calculo.operacion == ""){
             Execpcion("debe introducir 2 números y una operación para mostrar un resultado")
@@ -222,12 +234,7 @@ class MainActivity_dani : AppCompatActivity() {
                 "*" -> calculo.calculo("*")
                 "/" -> calculo.calculo("/")
             }
-            // Aparece el valor del atributo calculo por pantalla y se reinicia el resto de atributos y variables.
-            pantalla.text = calculo.resultado
-            calculo.num1 = calculo.resultado
-            calculo.num2 = ""
-            calculo.operacion = ""
-            bandera = false
+            Reiniciar()
         }
     }
 
@@ -288,6 +295,19 @@ class MainActivity_dani : AppCompatActivity() {
         btnRegresar.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent) }
+    }
+
+    fun Reiniciar(){
+        // Aparece el valor del atributo calculo por pantalla y se reinicia el resto de atributos y variables.
+        pantalla.text = calculo.resultado
+        if(calculo.resultado == "0"){
+            calculo.num1 = ""
+        }else{
+            calculo.num1 = calculo.resultado
+        }
+        calculo.num2 = ""
+        calculo.operacion = ""
+        bandera = false
     }
 
 }
