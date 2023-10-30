@@ -19,16 +19,16 @@ class MainActivityElian : AppCompatActivity() {
 
         inicBots()
         val calc = CalculoElian()
-        /*for (i in botones.indices) {
+        for (i in botones.indices) {
             botones[i].setOnClickListener {
                 val resultado = calc.BotonClick(i, botones[i].text.toString())
                 if (resultado == "") {
-                    mensError("Error de cifras")
+                    mensError("Debe introducir dos numeros y una operación")
                 }
                 texto.text = resultado
             }
-        }*/
-        calc.bucleBots(botones, texto)
+        }
+        //calc.bucleBots(botones, texto)
         btnRegresarMenu()
     }
 
