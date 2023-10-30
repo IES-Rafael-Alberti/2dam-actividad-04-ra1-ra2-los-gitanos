@@ -195,6 +195,7 @@ class MainActivity_dani : AppCompatActivity() {
             Execpcion("debe introducir 2 números y una operación para mostrar un resultado")
         }else if(calculo.num1 == "0" && operacionAnterior == "/" && calculo.num2 != ""){
             Reiniciar()
+            pantalla.text = "0"
         }
         else if(operacionAnterior == "/" && calculo.num2 == "0"){
             Reiniciar()
@@ -208,6 +209,7 @@ class MainActivity_dani : AppCompatActivity() {
                 calculo.calculo(signo)
                 pantalla.text = calculo.resultado
                 calculo.num1 = calculo.resultado
+                pantalla.text = calculo.num1 + calculo.operacion
                 calculo.num2 = ""
             }
         }
@@ -297,6 +299,9 @@ class MainActivity_dani : AppCompatActivity() {
             startActivity(intent) }
     }
 
+    /**
+     *  Se reinicia todos los valores.
+     */
     fun Reiniciar(){
         // Aparece el valor del atributo calculo por pantalla y se reinicia el resto de atributos y variables.
         pantalla.text = calculo.resultado
